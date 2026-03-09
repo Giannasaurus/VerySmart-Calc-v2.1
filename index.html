@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Very Smart Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <img id='logo' src="img/verysmart-calc-flat.svg" alt="VerySmart™ Calc logo">
+    </header>
+
+    <div id="wrapper">
+        <section id="section1">
+            <h2>Basic Operations</h2>
+            <div class="subsection">
+                <fieldset>
+                    <legend>Enter machine number:</legend>
+                    <input id="firstNum" type="number" placeholder="First number">
+                    <select id="operation" name="operation" title="Select operation">
+                        <option id='additionOperator' value="addition">+</option>
+                        <option id='subtractionOperator' value="subtraction">-</option>
+                        <option id='multiplicationOperator' value="multiplication">*</option>
+                        <option id='divisionOperator' value="division">/</option>
+                    </select>
+                    <input id="secondNum" type="number" placeholder="Second number" />
+                </fieldset>
+                <button id="submitBtn" type="submit">Submit</button>
+            </div>
+
+            <section id="section2">
+                <fieldset id='cedrick'>
+                    <legend>Chop or round result:</legend>
+                    <input id='chop' value='chop' name='method' type="radio" checked>
+                    <label for="chop">Chop</label>
+                    <input id='round' value="round" name="method" type="radio">
+                    <label for="round">Round</label>
+                    <br>
+                    <input id='double' type="checkbox">
+                    <label for="double">Double Chop/Round (chop/round inputs before operation)</label>
+                </fieldset>
+                <fieldset>
+                    <label for="significantDigits">Number of significant digits:</label>
+                    <input id='significantDigits' type="number" placeholder="2">
+                </fieldset>
+            </section>
+            <button id="applyChopRoundBtn" type="submit">Apply Chop/Round</button>
+
+            <div id="resultContainer" class="result-section">
+                <h2>Basic Operational Error Evaluation</h2>
+                <p><strong>Result:</strong> <span id="result"></span></p>
+                <p><strong>Absolute Error:</strong> <span id="absoluteErrorResult"></span></p>
+                <p><strong>Relative Error:</strong> <span id="relativeErrorResult"></span></p>
+                <p><strong>Maximum Error:</strong> <span id="maximumErrorResult"></span></p>
+                <p><strong>Significant Digits:</strong> <span id="significantDigitsResult"></span></p>
+            </div>
+        </section>
+
+        <section id="section3">
+            <h2>Polynomial Evaluation</h2>
+            <fieldset>
+                <div class="subsection">
+                    <label for="polynomialFunction">Enter polynomial function:</label> <br />
+                    <input id='polynomialFunction' type="text">
+                </div>
+                <div class="subsection">
+                    <label for="polynomialVariable">Enter value of x:</label> <br />
+                    <input id="polynomialVariable" type="number">
+                </div>
+            </fieldset>
+            <button id="evaluatePolynomialBtn" type="submit">Evaluate</button>
+            <div id="polynomialResultContainer" class="result-section">
+                <p><strong>Result:</strong> <span id="polynomialResult"></span></p>
+            </div>
+        </section>
+        <section id="section4">
+            <h2>Error Evaluation from P and P*</h2>
+            <fieldset>
+                <div class="subsection">
+                    <label for="pValue">Enter true value P:</label> <br />
+                    <input id="pValue" type="number" placeholder="P">
+                </div>
+                <div class="subsection">
+                    <label for="pStarValue">Enter approximate value P*:</label> <br />
+                    <input id="pStarValue" type="number" placeholder="P*">
+                </div>
+                <div class="subsection">
+                    <label for="extraSignificantDigits">Number of significant digits:</label> <br />
+                    <input id="extraSignificantDigits" type="number" placeholder="2">
+                </div>
+            </fieldset>
+            <button id="extraBtn" type="button">Evaluate Errors</button>
+            <div id="extraResultContainer" class="result-section">
+                <p><strong>P*:</strong> <span id="extraPStar"></span></p>
+                <p><strong>Absolute Error:</strong> <span id="extraAbsoluteError"></span></p>
+                <p><strong>Relative Error:</strong> <span id="extraRelativeError"></span></p>
+                <p><strong>Maximum Error:</strong> <span id="extraMaximumError"></span></p>
+                <p><strong>Significant Digits:</strong> <span id="extraSignificantDigitsResult"></span></p>
+            </div>
+        </section>
+        <section id="section5">
+            <h2>Binary Conversion</h2>
+            <fieldset>
+                <div class="subsection">
+                    <label for="decimalInput">Enter decimal number:</label> <br />
+                    <input id="decimalInput" type="number" placeholder="Decimal">
+                </div>
+                <div class="subsection">
+                    <label for="binaryInput">Enter binary number:</label> <br />
+                    <input id="binaryInput" type="text" placeholder="Binary">
+                </div>
+            </fieldset>
+            <button id="decToBinBtn" type="button">Decimal to Binary</button>
+            <button id="binToDecBtn" type="button">Binary to Decimal</button>
+            <div id="binaryResultContainer" class="result-section">
+                <p><strong>Decimal Result:</strong> <span id="binaryDecimalResult"></span></p>
+                <p><strong>Binary Result:</strong> <span id="binaryBinaryResult"></span></p>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.1/math.js"></script>
+</body>
+
+</html>
